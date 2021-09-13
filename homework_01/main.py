@@ -55,9 +55,9 @@ def filter_numbers(numbers, condition):
         return is_prime(numbers)
 
 
-#print(filter_numbers([1, 2, 3], ODD))
-#print(filter_numbers([2, 3, 4, 5], EVEN))
-#print(filter_numbers([1, 2, 3, 4, 5, 7, 22, 44,47, 101,102], PRIME))
+#print(filter_numbers([1,2,3,4,5,6,7,8,9], ODD))
+#print(filter_numbers([2,3,4,5,6,7,8,9,10], EVEN))
+#print(filter_numbers([3,4,5,6,7,8,9,11], PRIME))
 
 
 
