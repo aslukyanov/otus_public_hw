@@ -11,7 +11,8 @@ def power_numbers(*args):
     >>> power_numbers(1, 2, 5, 7)
     <<< [1, 4, 25, 49]
     """
-    final_lst = list(map(lambda x : x ** 2, args))
+    #final_lst = list(map(lambda x : x ** 2, args))
+    final_lst = [i ** 2 for i in args]
     return final_lst
 
 #print(power_numbers(1, 2, 5, 7))
@@ -47,11 +48,11 @@ def filter_numbers(numbers, condition):
     <<< [2, 4]
     """
 
-    if condition == "odd" :
+    if condition == ODD :
         return list(filter(lambda x : True if x % 2 == 1 else False, numbers))
-    if condition == "even" :
+    if condition == EVEN :
         return list(filter(lambda x : True if x % 2 == 0 else False, numbers))
-    if condition == "prime" :
+    if condition == PRIME :
         return is_prime(numbers)
 
 
