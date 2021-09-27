@@ -59,7 +59,7 @@ class Vehicle(ABC):
 
 if __name__ == "__main__" :
     #my_car = Vehicle(fuel=100)
-    my_car = Vehicle(fuel=10)
+    my_car = Vehicle(fuel=-10)
 
     print(my_car.fuel)
     print(my_car.started)

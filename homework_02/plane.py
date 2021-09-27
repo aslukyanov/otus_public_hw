@@ -2,8 +2,15 @@
 создайте класс `Plane`, наследник `Vehicle`
 """
 
-from base import Vehicle
-import exceptions
+import sys
+#print(sys.path)
+sys.path.append('../')
+
+#from homework_02 import base
+#from base import Vehicle
+from homework_02 import exceptions
+from homework_02.base import Vehicle
+
 
 class Plane(Vehicle) :
     def __init__(self, max_cargo, weight=1000, fuel=0, fuel_consumption=10, cargo=100) :
