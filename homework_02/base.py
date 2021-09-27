@@ -20,13 +20,14 @@ fuel_consumption
 
 
 """
-#import sys
+import sys
 #print(sys.path)
+sys.path.append('../')
 
 from abc import ABC
-#from homework_02.exceptions.py import LowFuelError, NotEnoughFuel
-import exceptions
-
+#from homework_02.exceptions import LowFuelError, NotEnoughFuel
+#import exceptions
+from homework_02 import exceptions
 
 class Vehicle(ABC):
     
@@ -46,7 +47,7 @@ class Vehicle(ABC):
             self.started = True
         else :
             raise exceptions.LowFuelError
-
+            
 
     def move(self, distance) :
         fuel_needed = self.fuel_consumption * distance
@@ -58,7 +59,7 @@ class Vehicle(ABC):
 
 if __name__ == "__main__" :
     #my_car = Vehicle(fuel=100)
-    my_car = Vehicle(fuel=-1)
+    my_car = Vehicle(fuel=10)
 
     print(my_car.fuel)
     print(my_car.started)
