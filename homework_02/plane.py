@@ -13,11 +13,11 @@ from homework_02.base import Vehicle
 
 
 class Plane(Vehicle) :
-    def __init__(self, max_cargo, weight=1000, fuel=0, fuel_consumption=10, cargo=100) :
-        super().__init__(weight=1000, fuel=0, fuel_consumption=10)
+    def __init__(self, max_cargo, weight=0, fuel=0, fuel_consumption=0, cargo=0) :
+        super().__init__(weight, fuel, fuel_consumption)
         self.cargo = cargo
         self.max_cargo = max_cargo
-
+        
     def load_cargo(self, val) :
         if val + self.cargo < self.max_cargo :
             self.cargo += val
@@ -31,23 +31,27 @@ class Plane(Vehicle) :
 #weight=1000, fuel=0, fuel_consumption=10
 
 if __name__ == "__main__" :
-    my_plane = Plane(200, weight=2000, cargo=50)
+    #my_plane = Plane(200, weight=2000, cargo=50)
+    my_plane = Plane(200, cargo=50)
     #print(my_plane.fuel)
     #print(my_plane.max_cargo)
     #print(my_plane.cargo)
-
+    my_plane.cargo = 100
+    print(my_plane.cargo)
     my_plane.load_cargo(100)
-    #print(my_plane.cargo)
-    #my_plane.load_cargo(100)
-    #print(my_plane.cargo)
+    print(my_plane.cargo)
+    my_plane.load_cargo(100)
+    print(my_plane.cargo)
 
-    print(my_plane.remove_all_cargo())
-    print(my_plane.weight)
-    print(my_plane.fuel)
-    print(my_plane.fuel_consumption)
+    #plane.remove_all_cargo())
+    #print(my_plane.weight)
+    #my_plane.weight = 3000
+    #print(my_plane.weight)
+    #plane.fuel)
+    #plane.fuel_consumption)
 
-    my_plane.weight = 2000
-    print(my_plane.weight)
+    #my_plane.weight = 2000
+    #print(my_plane.weight)
 
 
 
