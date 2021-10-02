@@ -30,7 +30,7 @@ def is_prime(numbers) :
         for j in range(2, i, 1) :
             if i % j == 0 :
                 count += 1
-        if count == 0 :
+        if count == 0 and i != 0:
             final_lst.append(i)
     return final_lst
 
@@ -58,7 +58,7 @@ def filter_numbers(numbers, condition):
 
 #print(filter_numbers([1,2,3,4,5,6,7,8,9], ODD))
 #print(filter_numbers([2,3,4,5,6,7,8,9,10], EVEN))
-#print(filter_numbers([3,4,5,6,7,8,9,11], PRIME))
+#print(filter_numbers([0,3,4,5,6,7,8,9,11], PRIME))
 
 
 
