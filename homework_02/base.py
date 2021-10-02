@@ -43,15 +43,15 @@ class Vehicle(ABC):
         self.started = started
 
     def start(self) :
-        if self.fuel > 0 and self.started == False :
+        if self.fuel > 0 and self.started is False :
             self.started = True
-        else :
+        if self.fuel <= 0 and self.started is False :
             raise exceptions.LowFuelError
             
 
     def move(self, distance) :
         fuel_needed = self.fuel_consumption * distance
-        if self.fuel - fuel_needed > 0 :
+        if self.fuel - fuel_needed >= 0 :
             self.fuel -= fuel_needed
         else :
             raise exceptions.NotEnoughFuel
