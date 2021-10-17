@@ -20,9 +20,11 @@ def home():
 def page(request: Request, page_name: str):
     month = int(page_name.split("_")[1])
     day = int(page_name.split("_")[0])
+    responce_date = page_name.split("_")[0] + "." + page_name.split("_")[1]
     data = {
         "shift": get_my_shed(day, month)[0],
-        "day" : get_my_shed(day, month)[1]
+        "day" : get_my_shed(day, month)[1],
+        "responce" : responce_date
     }
     return templates.TemplateResponse("page.html", {"request": request, "data": data})
 
