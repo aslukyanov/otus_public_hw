@@ -11,7 +11,8 @@ templates = Jinja2Templates(directory="./template")
 def home():
     data = {
         "name": "My 2021 schedule",
-        "ex": "Go to /my_sched/day_month page"
+        "sched_day": "Go to /my_sched/day_month page",
+        "sched_period" : "Go to /my_sched/day1_month1_day2_month2 page"
     }
     return {"data": data}
 
@@ -39,11 +40,13 @@ def page(request: Request, page_name: str):
         data = {
             "result": get_period_of_sched(day1, month1, day2, month2)
         }
-        print(data)
+        #print(data)
         return templates.TemplateResponse("page2.html", {"request": request, "data": data})
 
 
-
+@app.get("/ping/", summary="Get test message")
+def ping():
+    return {"message": "pong"}
 
 
 
